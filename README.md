@@ -35,12 +35,14 @@ I hope you will deploy easily and happily enjoy my service!
 ### Step 1: Create a Facebook page
   + [Please click here to create a new Facebook page](https://www.facebook.com/pages/create/), and select appropriate page type, fill in description and other required fields.
   + In your new Facebook page, switch to `About` tab and scroll down to the bottom of the page then note down the `Facebook Page ID`. You will use the role and previlege of this Facebook page to post messages on this page's wall.
+
 ### Step 2: Create Facebook App
   + If you are not a Facebook developer, [plrase click here to register as a developer](http://developers.facebook.com) (You have to verify through mobile.)
   + Go to [Facebook Apps dashboard](https://developers.facebook.com/apps) → Click `Add a New App` → Choose platform of `Website`  Choose a name for your application → Click `Create New Facebook App ID` → Choose Category → Click `Create App ID`
   + Go back to [Apps dashboard](https://developers.facebook.com/apps) → Select your new application → `Settings` → `Basic` → Enter `Contact Email` → `Save`
   + Go to `Status & Review` → `Do you want to make this app and all its live features available to the general public?` toggle the button to `Yes` → `Make App Public?`, click `Yes`
   +  Go back to `Dashboard`, note down `App ID` and `App Secret` (You have to click `Show` next to the field; it will ask you to enter your Facebook password.)
+
 ### Step 3: Obtain your page access token
   + Go to [Graph API Explorer](https://developers.facebook.com/tools/explorer/) → In the Application drop-down menu, select the name of your app which created in Step 2 → Click `Get Token` to open drop-down menu and select `Get User Access Token` → In Permissions popup menu, checked `manage_pages`, `publish_actions` and `publish_pages` → Click `Get Access Token`
 
@@ -60,6 +62,7 @@ https://graph.facebook.com/oauth/access_token?
   + Go to [Graph API Explorer](https://developers.facebook.com/tools/explorer/) → Paste the `long-lived token` into the Access Token input field → Type `me/accounts` in the `Graph API` query input field → Click `Submit` button → You will see the information of all your pages, find the Facebook page created in Step 1 and note down the `access_token` of it.
 
   + According to [Facebook's documentation](https://developers.facebook.com/docs/facebook-login/access-tokens#extendingpagetokens), a page access token obtained from long-lived user token will never expire in the future.
+
 ## Deployment
   In this section, we will present some approaches about building the service. 
 ### Step 4: Register an OpenShift account and deploy Publisher Application on it
