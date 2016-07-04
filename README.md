@@ -117,7 +117,7 @@ https://graph.facebook.com/oauth/access_token?
   + See the next Step7: Settings then go back to this step 
   + Input the command: ```git push``` then done.
 
-# Step7: Settings (Simple)
+### Step7: Simple settings
   + Before pushing the project to the repos, It's important for you to edit the setting.php file. you can find the file in this path: /path/to/publisher-system/settings/setting.php
   + Using text editor to edit setting.php file and you can find the following code:
   
