@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="peter-lee">
+
+    <title id="start-title"></title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/nprogress.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+		body {
+			padding-top: 70px;
+			/* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+		}
+		#feed-contents {
+			font-size: 1.25em;
+			color: #fff;
+			background-color: #009999;
+			border: 3px solid #000;
+			padding: 5px;
+		}
+		#well-black {
+			background-color: black;
+		}
+		.well-gray {
+			background-color: #737373;
+			color: #fff;
+			font-weight: bold;
+		}
+		.txt-red {
+			background-color: #737373;
+			color: #800;
+			font-weight: bold;
+		}
+		.small-wall {
+			background-color: #663300;
+			padding: 1px 2px;
+			color:white;
+			font-weight: bold;
+		}
+		.link-hover:hover {
+			background-color: #663300;
+		}
+		#user-guide-link:link, #user-guide-link:visited {
+			background-color: #003399;
+			color: white;
+			padding: 2px 5px;
+			text-align: center; 
+			text-decoration: none;
+			display: inline-block;
+		}
+		#user-guide-link:hover, #user-guide-link:active {
+			background-color: #cc0000;
+		}
+		#scroll-view {
+			height: 150px;
+			overflow: scroll;
+		}
+		.checkbox-size, .radio-btn {
+			width: 19px;
+			height: 19px;
+			display: inline;
+		}
+		#fonts-name, #fonts-color {
+			color: black;
+			font-size: 1.25em;
+			height: 1.75em;
+		}
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="header-title" class="navbar-brand" href="./"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="link-hover">
+                        <a id="user-guide" href=""></a>
+                    </li>
+					<li class="link-hover">
+                        <a id="facebook-page-link" href="">Facebook</a>
+                    </li>
+					<li class="link-hover">
+                        <a id="plurk-page-link" href="">Plurk</a>
+                    </li>
+					<!--customize-->
+					<li class="link-hover">
+                        <a id="someone-comment" href="#"></a>
+                    </li>
+                    <li class="link-hover">
+                        <a id="term-feed" href="#"></a>
+                    </li>
+                    <li class="link-hover">
+                        <a id="curl-feed" href="#"></a>
+                    </li>
+					<!--end customize-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+				<div class="well well-lg">
+					<h1 id="title-en"></h1>
+					<h2 id="title-msg"></h2>
+					<p id="title-description" class="lead"></p>
+				</div>
+				<div id="well-black" class="well well-sm" name="description-usage"></div>
+				<div class="txt-red well well-sm" name="post-support"></div>
+				<div class="well well-sm well-gray" name="tutorial"></div>
+				<div id="curl-cmd">
+					<pre class="text-left">
+#!/bin/bash
+#using curl command to post feed anonymously
+curl -k https://peter279k.com/bigsu-life/api/post -F feed_contents="Hello, bigsu-life"
+					</pre>
+				</div>
+				<form id="feed-post" role="form">
+					<div class="form-group text-left">
+						<label id="input-msg"></label>
+						<hr></hr>
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" id="feed-contents" rows="10" placeholder=""></textarea>
+					</div>
+					<div class="form-group text-left">
+						<label id="input-post-mode"></label>
+						<hr></hr>
+						<div class="radio">
+							<label id="limit-txt"><input class="radio-btn" type="radio" name="optradio" value="plain-txt"></label>
+						</div>
+						<div class="radio">
+							<label id="limit-img-txt"><input class="radio-btn" type="radio" name="optradio" value="image-txt"></label>
+						</div>
+					</div>
+					<div id="preview-img-area" class="form-group text-left">
+						<label id="preview-img-txt"></label>
+						<img id="background-img" src="http://i.imgur.com/ssWB8CW.png" class="img-responsive" alt="preview image">
+					</div>
+					<div id="select-fonts" class="form-group text-left">
+						<label id="fonts-name-select" for="fonts-name"></label>
+						<select id="fonts-name" class="form-control"></select>
+					</div>
+					<div id="select-font-color" class="form-group text-left">
+						<label id="fonts-color-select" for="fonts-color"></label>
+						<select id="fonts-color" class="form-control"></select>
+					</div>
+					<div id="select-watermark" class="form-group text-left">
+						<label id="yes-no-watermark" for="yes-no-watermark"></label>
+						<div class="radio">
+							<label id="watermark-optradio-yes"><input class="radio-btn" type="radio" name="watermark-optradio" value="watermark" checked></label>
+						</div>
+						<div class="radio">
+							<label id="watermark-optradio-no"><input class="radio-btn" type="radio" name="watermark-optradio" value="no-watermark"></label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="well well-sm text-left well-gray">
+							<div class="small-wall" name="post-policy"></div>
+							<span name="policy-rule"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="well well-sm text-left well-gray">
+							<div id="private-policy" class="small-wall"></div>
+							<p id="scroll-view"></p>
+						</div>
+					</div>
+					<div class="form-group text-left">
+						<div id="agree-policy-area" class="well well-sm text-left form well-gray"></div>
+					</div>
+					<div class="form-group">
+						<button id="submit-btn" class="btn btn-success"></button>
+					</div>
+				</form>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+	
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+	<!--sammy lib 0.7.5-->
+	<script src="js/sammy.js"></script>
+	
+	<!--sammy plugins-->
+	<script src="js/plugins/sammy.template.js"></script>
+	
+ 
+    <script src="app.js"></script>
+	
+	<!--Controller-->
+    <script src="controller/main.js"></script>
+    <!--<script src="controller/comment.js"></script>-->
+    <!--<script src="controller/terminal.js"></script>-->
+	
+	<!--nprogress.js-->
+	<script src="js/nprogress.js"></script>
+	
+</body>
+
+</html>

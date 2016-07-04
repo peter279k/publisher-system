@@ -1,0 +1,6 @@
+{
+    "require": {
+        "nmcteam/image-with-text": "^2.0",
+		"sinergi/token": "~0.1.0"
+    }
+}

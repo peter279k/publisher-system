@@ -1,0 +1,3 @@
+<div>
+	<h1><%= myVariable %></h1>
+</div>

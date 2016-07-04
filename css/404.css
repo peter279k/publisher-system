@@ -1,0 +1,58 @@
+.background-blue {
+	background:#0000aa;
+}
+
+.menu-link {
+	color: #fff;
+}
+
+.menu-link:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+p {
+    margin:30px 100px;
+    text-align:left;
+	font-size: 1.5em;
+}
+
+.menu {
+    text-align:center;
+    margin-top:50px;
+	font-size: 1.25em;
+}
+
+@import "compass/css3";
+
+#wrap:after {
+	content: "_";
+	opacity: 0;
+	animation: cursor 1s infinite;
+}
+@keyframes cursor {
+	0% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+/* press any key (styling) */
+
+#wrap {
+	box-sizing: border-box;
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1.5em;
+}
