@@ -66,3 +66,52 @@ https://graph.facebook.com/oauth/access_token?
 ## Deployment
   In this section, we will present some approaches about building the service. 
 ### Step 4: Register an OpenShift account and deploy Publisher Application on it
+  + Log in account and go to the applications web console.
+  + Click Add Application button and you will see lots of services that can choose.
+  + You will see the PHP section and click the see all link. You can look at this picture.
+  ![Alt text](https://i.imgur.com/tcw0vv7.png)
+  + Drop down the web page and you will find the application named "PHP5.5-cgi-Apache".
+  + Click this application and fill the Public URL field then you can click Create Application button.
+  + You have to visit the Public URL which you fill. You have to close this web page until the compiling successfully.
+  + When compiling successfully, you will see the web page that present the result of executing phpinfo() function.
+  + You can visit this link: [Generating a new SSH key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#generating-a-new-ssh-key) and refer the "Generating a new SSH key" section.
+  + Note! If you use Windows, you have to download [Git for Windows](https://git-scm.com/download/win). It can help you successfully create ssh-key. If you use Unix-based operating system, you will easily generate ssh-key and you can skip the Step5.
+### Step5: Generating ssh key
+  + This step is for Windows user.
+  + Before generating ssh-key, you have already the Git for Windows. If not, you have to go back to step4 and find the download link then install it. When install Git for Windows, using the default settings during installation.
+  + Go back to the Windows Desktop and click the right mouse button. You will see the "Git Bash Here" then click it.
+  + You will see a bash shell then you can follow the "Generating a new SSH key" step to create key successfully.
+  + When creating ssh key successfully, you have to check this folder: ```C:\Users\your-user-name\.ssh```. In this folder, you will find the public key file ```named id_rsa.pub``` and you can use NotePad++ or other edit editors to open it. Note down the public key.
+### Step6: Add New key
+  + Go back to the OpenShift web console and click Settings tab.
+  + Click "Add a new Key..." button and fill the fields. You have to note that you have to paste your public key in the second field.
+  + Click create button.
+  + Click Applications tab and click your application name which you create.
+  + In this web page, you have to see the text: "Source Code". You will find the command: ```ssh://your-user-name@your-public-url/~/git/your-repo-name.git/```. You can refer following picture:
+  ![Alt text](https://i.imgur.com/DOExrP5.png)
+  + Go back to Desktop. If you use Windows, you can open the git-bash. If you use Unix-based operating system, you have to install Git package. For instance, I use Ubuntu so I open teriminal and input the command: ```sudo apt-get install git-core```
+  + Input the command:```git clone ssh://your-user-name@your-public-url/~/git/your-repo-name.git/```.
+  + Check out the repo, you have to copy this publisher system repo to "your-repo-name" repo.
+  + Check out the file path: /path/to/your-repo-name/.openshift/action_hooks and create the file name: post_deploy.
+  + Input the following contents in post_deploy file.
+  
+  ```bash
+  #!/bin/bash
+  #Prerequisites
+  #Firstly, you have to upload composer.phar via sftp or scp command to the ~/app-root/runtime/bin
+
+  cp ~/app-root/runtime/bin/composer.phar ~/app-root/repo/www/composer.phar
+
+  cd ~/app-root/repo/www
+
+  ~/app-root/runtime/bin/php composer.phar install
+  ```
+  
+  + Open git-bash (Windows) or terminal (Unix-based) and input the command: ```git add .```
+  + Input command: ```git commit -a ``` and input the contents: ```Initial commit.```
+  + Input the command: ```ssh your-username@your-name-uploadspace.rhcloud.com```
+  + Using scp command to copy the composer.phar to this file path: ~/app-root/runtime/bin
+  + Input the command: ```git push``` then done.
+
+# Other Information
+  If you want to have more informations, please check out the [wiki page](https://github.com/peter279k/publisher-system/wiki). There are many informations about deployment and configuration.
