@@ -1,7 +1,7 @@
 (function() {
 
 	var app = Sammy.apps.body;
-	var base_name = "bigsu-life";
+	var base_name = "publisher-system";
 	var page_name = "";
 	
 	$("#background-img").hide();

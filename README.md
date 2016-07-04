@@ -1,4 +1,5 @@
 # publisher-system
+[![Gitter](https://badges.gitter.im/peter279k/publisher-system.svg)](https://gitter.im/peter279k/publisher-system?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 # Introduction
   This project is inspired by [facebook-anonymous-publisher](https://github.com/kobeengineer/facebook-anonymous-publisher) and it also provide you to easily manage anonymous Facebook page and Plurk bot.
   
@@ -227,5 +228,6 @@ https://graph.facebook.com/oauth/access_token?
   
 # Other Information
   + If you want to have more informations, please check out the [wiki page](https://github.com/peter279k/publisher-system/wiki). There are many informations about deployment,customization and configuration.
+
 # License
   MIT
