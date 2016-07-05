@@ -82,7 +82,7 @@ https://graph.facebook.com/oauth/access_token?
   + This step is for Windows user.
   + Before generating ssh-key, you have already the Git for Windows. If not, you have to go back to step4 and find the download link then install it. When installing Git for Windows, using the default settings during installation.
   + Go back to the Windows Desktop and click the right mouse button. You will see the "Git Bash Here" then click it.
-  + You will see a bash shell then you can follow the "Generating a new SSH key" step to create key successfully.
+  + You will see a bash shell then you can follow the "Generating a new SSH key" link step to create key successfully.
   + When creating ssh key successfully, you have to check this folder: ```C:\Users\your-user-name\.ssh```. In this folder, you will find the public key file ```named id_rsa.pub``` and you can use NotePad++ or other edit editors to open it. Note down the public key.
 
 ### Step6: Add New key
