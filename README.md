@@ -111,10 +111,10 @@ https://graph.facebook.com/oauth/access_token?
   ```
   
   + Open git-bash (Windows) or terminal (Unix-based) and input the command: ```git add .```
-  + Input command: ```git commit -a ``` and input the contents: ```Initial commit.```
   + Input the command: ```ssh your-username@your-name-uploadspace.rhcloud.com```
   + Using scp command to copy the composer.phar to this file path: ~/app-root/runtime/bin
   + See the next Step7: Settings then go back to this step 
+  + Input command: ```git commit -a ``` and input the contents: ```Initial commit.```
   + Input the command: ```git push``` then done.
 
 ### Step7: Simple settings
