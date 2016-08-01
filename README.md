@@ -2,7 +2,6 @@
 [![Gitter](https://badges.gitter.im/peter279k/publisher-system.svg)](https://gitter.im/peter279k/publisher-system?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 # Introduction
 
-[![Join the chat at https://gitter.im/peter279k/publisher-system](https://badges.gitter.im/peter279k/publisher-system.svg)](https://gitter.im/peter279k/publisher-system?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
   This project is inspired by [facebook-anonymous-publisher](https://github.com/kobeengineer/facebook-anonymous-publisher) and it also provide you to easily manage anonymous Facebook page and Plurk bot.
   
   The general method to provide an anonymous Facebook page for people is:
