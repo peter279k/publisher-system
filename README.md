@@ -23,7 +23,10 @@ This project provides some advantages by the following steps for you:
 ## Demonstration
 Please visit this link: [bigsu-life](https://peter279k.com/bigsu-life)
 
-## Usage
+## Usage(This usage section is deprecated. Please see this [announcement](https://blog.openshift.com/migrate-to-v3-v2-eol/))
+
+> In this section, it's deprecated. We use the OpenShift2 to deploy this App, but the OpenShift2 is end of life now. We're not ready to move this to the OpenShift3.
+
 This application is based on [Slim2](http://docs.slimframework.com/) (a PHP framework) and it's an open source project on Github.
 
 We provide some approaches that can help you to deploy this project. If you don't have your own server, you can see OpenShift section and I will teach you how to build your own service on OpenShift (using "Free plan"). I also provide Heroku section to let you deploy your own service on Heroku (using "Free plan").
